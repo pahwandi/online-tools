@@ -1,0 +1,31 @@
+{
+  "name": "example-bare",
+  "version": "0.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "lint": "oxlint src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@solidjs/diagnostics": "^2.0.0-rc.6",
+    "@solidjs/start-devtools": "^1.0.0-next.4",
+    "@solidjs/vite-plugin": "^3.0.0-next.38",
+    "@tailwindcss/vite": "^4.3.3",
+    "eslint-plugin-solid": "~0.18.0",
+    "oxlint": "~1.79.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.2",
+    "vite": "^8.1.5"
+  },
+  "dependencies": {
+    "@solidjs/router": "^2.0.0-next.19",
+    "@solidjs/web": "^2.0.0-rc.6",
+    "json5": "^2.2.3",
+    "solid-js": "^2.0.0-rc.6"
+  }
+}

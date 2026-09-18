@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-mono: "JetBrains Mono", "Fira Code", "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+::selection {
+  background: var(--color-lime-100);
+  color: var(--color-stone-900);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-stone-200);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-stone-400);
+  border-radius: 4px;
+}
+
+body {
+  font-family: var(--font-mono);
+  margin: 0;
+  padding: 0;
+  background: var(--color-stone-50);
+  color: var(--color-stone-600);
+  font-size: 15px;
+  line-height: 2;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  color: var(--color-stone-900);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+h1 { @apply text-3xl max-[40rem]:text-2xl }
+h2 { @apply text-2xl max-[40rem]:text-xl  }
+h3 { @apply text-xl max-[40rem]:text-lg  }
+h4 { @apply text-lg max-[40rem]:text-base font-medium }
+
+a {
+  color: var(--color-stone-900);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  color: var(--color-stone-600);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-stone-900);
+  outline-offset: 2px;
+}
+
+p {
+  margin: 0;
+  line-height: 2;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+code, pre {
+  font-family: var(--font-mono);
+}
+
+pre {
+  margin: 0;
+  overflow-x: auto;
+}
+
+.sr-only {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.section {
+  @apply flex flex-col gap-5 px-20 max-[65rem]:px-6 max-[60rem]:px-6 py-16 border-b border-stone-950/20 dark:border-stone-50/16;
+}
+
+.section .section__title {
+  @apply font-bold text-stone-900 dark:text-stone-100;
+}
+
+.nav-link {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-decoration: none;
+  color: var(--color-stone-600);
+  transition: color 150ms ease;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  color: var(--color-stone-900);
+}
+
+.nav-link[aria-current="page"] {
+  color: var(--color-stone-900);
+  font-weight: 500;
+}
+
+html.dark ::selection {
+  background: var(--color-lime-950);
+  color: var(--color-stone-100);
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background: var(--color-stone-800);
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: var(--color-stone-500);
+}
+
+html.dark body {
+  background: var(--color-stone-950);
+  color: var(--color-stone-400);
+}
+
+html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6 {
+  color: var(--color-stone-100);
+}
+
+html.dark a {
+  color: var(--color-stone-100);
+}
+
+html.dark a:hover {
+  color: var(--color-stone-400);
+}
+
+html.dark .nav-link {
+  color: var(--color-stone-400);
+}
+
+html.dark .nav-link:hover {
+  color: var(--color-stone-100);
+}
+
+html.dark .nav-link[aria-current="page"] {
+  color: var(--color-stone-100);
+}
+
+html.dark :focus-visible {
+  outline-color: var(--color-stone-100);
+}
+
+@media (max-width: 60rem) {
+  body {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  h1 { font-size: 1.375rem; }
+}
