@@ -36,7 +36,7 @@ export default function Header() {
     <>
       <header class="sticky top-0 z-10 h-20 min-h-20 flex items-center bg-stone-50 dark:bg-stone-950 border-b border-stone-950/20 dark:border-stone-50/16">
         <div class="w-full max-w-270 mx-auto px-20 max-[65rem]:px-6 max-[60rem]:px-6 flex items-center justify-between">
-          <a href="/" class="no-underline!">
+          <a href={`${PAHWANDI_BASE}/`} class="no-underline!">
             <h2 class="text-stone-900 dark:text-stone-100">
               <span class="font-bold text-xl tracking-wide">HARI</span>
               <span class="font-normal text-sm underline tracking-[0.15em]">
