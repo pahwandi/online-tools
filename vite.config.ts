@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import solid from '@solidjs/vite-plugin';
 import tailwindcss from '@tailwindcss/vite';
+import Icons from 'unplugin-icons/vite';
 
 export default defineConfig({
   // Turnkey client mode: no index.html and no mount file — the plugin
@@ -9,6 +10,7 @@ export default defineConfig({
   // dist/client/index.html and emits a purely static dist/client.
   plugins: [
     tailwindcss(),
+    Icons({ compiler: 'solid' }),
     solid({ start: true, diagnostics: true }), // add `ssr: true` for streaming SSR
   ],
   server: {
