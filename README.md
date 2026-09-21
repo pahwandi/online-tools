@@ -1,56 +1,68 @@
-## Solid `bare` template
+# Hari Pahwandi — Online Tools
 
-The smallest useful Solid 2.0 app: `solid-js` + `@solidjs/web`, no router, no server dependencies.
+Free, privacy-friendly online tools. Every tool runs entirely in your browser — nothing is uploaded to a server.
 
-**Deployment contract:** `vite build` emits a purely static site — deploy `dist/client` to any static host. The client ships only Solid and your component.
+## Tools
 
-## How it works
+**JSON**
 
-There is no `index.html` and no mount file. `@solidjs/vite-plugin`'s turnkey mode (`start: true` in `vite.config.ts`) generates the entries around two conventions:
+- [JS Object to JSON](/js-object-to-json) — convert a JS object literal to valid, formatted JSON.
+- [JSON Formatter](/json-formatter) — prettify, minify, and validate JSON with syntax highlighting.
+- [JSON to CSV](/json-to-csv) — convert an array of JSON objects to CSV with nested flattening.
 
-- **`src/App.tsx`** — the app. A plain default-exported component; everything you build lives under it.
-- **`src/Document.tsx`** — the document shell, the new `index.html`. It renders the full `<html>` and is where head tags go (title, meta, favicon). It is compiled only into the prerendered static shell and adds **zero client-side JS**. Delete it to fall back to the plugin's built-in shell.
+**Image**
 
-`vite build` prerenders the shell into `dist/client/index.html` and emits the client assets alongside it.
+- [Image Compressor](/image-compressor)
+- [Image Cropper](/image-cropper)
+- [Image Format Converter](/image-converter)
+- [Image Resizer](/image-resizer)
+- [Image to Favicon](/image-to-favicon)
+- [Image Watermark](/image-watermark)
 
-## Usage
+## Tech stack
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+- [Solid 2.0](https://solidjs.com) + [`@solidjs/router`](https://github.com/solidjs/solid-router)
+- [`@solidjs/vite-plugin`](https://github.com/solidjs/vite-plugin) (turnkey client mode — no `index.html`, no mount file)
+- [Tailwind CSS 4](https://tailwindcss.com) via `@tailwindcss/vite`
+- [Iconify](https://iconify.design) icons (MDI) via `unplugin-icons`
+- Google Analytics
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+## Getting started
 
 ```bash
-$ npm install # or pnpm install or yarn install
+pnpm install   # or npm install / yarn install
+pnpm dev       # start the dev server
 ```
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+Open http://localhost:8091.
 
-## Available Scripts
+## Structure
 
-In the project directory, you can run:
+```
+src/
+  App.tsx                 # root component: router + layout
+  Document.tsx            # document shell (the "index.html") — head tags live here
+  consts.ts               # site metadata, tool catalog, GA id
+  router.ts               # route table
+  pages/                  # one file per tool + Home / NotFound
+  components/             # Header, Footer, BaseLayout, Dropzone, Section
+  lib/                    # shared image + UI helpers
+  styles/global.css       # Tailwind entry
+```
 
-### `npm run dev` or `npm start`
+## Available scripts
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+| Script           | Description                                            |
+| ---------------- | ------------------------------------------------------ |
+| `pnpm dev`       | Start the dev server (http://localhost:8091).          |
+| `pnpm build`     | Build the static site to `dist/client`.                |
+| `pnpm serve`     | Preview the production build locally.                  |
+| `pnpm lint`      | Lint `src/` with oxlint.                               |
 
-The page will reload if you make edits.<br>
+## Deployment
 
-### `npm run build`
-
-Builds the static production site to `dist/client`.
-
-### `npm run serve`
-
-Serves the production build locally.
+`vite build` emits a purely static site — deploy `dist/client` to any static host.
 
 ## The `ssr` flip
 
 Streaming SSR is one boolean: add `ssr: true` next to `start: true` in `vite.config.ts`. `src/App.tsx` and `src/Document.tsx` carry over unchanged — `<HydrationScript />` is already in place in the Document (in client mode it is stripped from the static shell). The build then emits a request handler to `dist/server` instead of a purely static site.
-
-## Growing out of `bare`
-
-- **A router, file-system routes, per-page titles, and testing** come with the `basic` template — same structure, more floors.
-- **A server** (data loading, mutations, sessions, API routes) is the `fullstack` template.
-
-## This project was created with the [Solid CLI](https://github.com/solidjs-community/solid-cli)
