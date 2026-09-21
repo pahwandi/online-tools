@@ -3,6 +3,8 @@ export const SITE_DESCRIPTION =
   'Free, privacy-friendly online tools by Hari Pahwandi. Every tool runs entirely in your browser.';
 export const SITE_AUTHOR = 'Hari Pahwandi';
 
+export const GOOGLE_ANALYTICS_ID = 'G-V249GRDSTD';
+
 export interface Tool {
   name: string;
   description: string;
