@@ -81,4 +81,39 @@ export const TOOL_CATEGORIES: ToolCategory[] = [
       },
     ],
   },
+  {
+    name: 'Dev Misc',
+    tools: [
+      {
+        name: 'Unix Timestamp Converter',
+        description:
+          'Convert Unix timestamps to human-readable dates and back — seconds or milliseconds, live clock, relative time.',
+        href: '/timestamp-converter',
+      },
+      {
+        name: 'Cron Parser',
+        description:
+          'Explain a cron expression in plain English, validate each field, and preview the next run times.',
+        href: '/cron-parser',
+      },
+      {
+        name: 'Color Converter',
+        description:
+          'Convert between HEX, RGB, HSL, and named colors — with a WCAG contrast checker for accessible color pairs.',
+        href: '/color-converter',
+      },
+      {
+        name: 'CSS Gradient Generator',
+        description:
+          'Design linear and radial CSS gradients — angle, shape, color stops, live preview, ready-to-paste CSS.',
+        href: '/gradient-generator',
+      },
+      {
+        name: 'Code Minifier & Formatter',
+        description:
+          'Minify or beautify HTML, CSS, and JavaScript right in the browser — with size stats, copy, and download.',
+        href: '/code-minifier',
+      },
+    ],
+  },
 ];

@@ -9,6 +9,11 @@ import ImageCropper from './pages/ImageCropper';
 import ImageResizer from './pages/ImageResizer';
 import ImageToFavicon from './pages/ImageToFavicon';
 import ImageWatermark from './pages/ImageWatermark';
+import TimestampConverter from './pages/TimestampConverter';
+import CronParser from './pages/CronParser';
+import ColorConverter from './pages/ColorConverter';
+import GradientGenerator from './pages/GradientGenerator';
+import CodeMinifier from './pages/CodeMinifier';
 import NotFound from './pages/NotFound';
 
 export const Router = createRouter({
@@ -23,6 +28,11 @@ export const Router = createRouter({
     { path: '/image-resizer', component: ImageResizer },
     { path: '/image-to-favicon', component: ImageToFavicon },
     { path: '/image-watermark', component: ImageWatermark },
+    { path: '/timestamp-converter', component: TimestampConverter },
+    { path: '/cron-parser', component: CronParser },
+    { path: '/color-converter', component: ColorConverter },
+    { path: '/gradient-generator', component: GradientGenerator },
+    { path: '/code-minifier', component: CodeMinifier },
     { path: '*404', component: NotFound },
   ],
 });
