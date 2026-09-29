@@ -12,12 +12,25 @@ Free, privacy-friendly online tools. Every tool runs entirely in your browser �
 
 **Image**
 
+- [EXIF Stripper](/exif-stripper) — view and remove hidden metadata (EXIF, GPS, XMP); lossless for JPEG/PNG.
 - [Image Compressor](/image-compressor)
 - [Image Cropper](/image-cropper)
 - [Image Format Converter](/image-converter)
 - [Image Resizer](/image-resizer)
+- [Image to Data URI](/image-to-data-uri) — base64 data URI with CSS/HTML snippets and URL-encoded SVG output.
 - [Image to Favicon](/image-to-favicon)
 - [Image Watermark](/image-watermark)
+
+**Dev Misc**
+
+- [Code Minifier & Formatter](/code-minifier)
+- [Color Converter](/color-converter)
+- [Cron Generator](/cron-generator) — build a cron expression from a form.
+- [Cron Parser](/cron-parser) — explain a cron expression, validate fields, preview next runs.
+- [CSS Gradient Generator](/gradient-generator)
+- [JWT Decoder](/jwt-decoder) — decode header/payload, read claims, verify HMAC signatures locally.
+- [Regex Tester](/regex-tester) — live match highlighting, capture groups, replace preview.
+- [Unix Timestamp Converter](/timestamp-converter)
 
 ## Tech stack
 

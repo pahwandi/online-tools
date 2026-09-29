@@ -44,6 +44,12 @@ export const TOOL_CATEGORIES: ToolCategory[] = [
     name: 'Image',
     tools: [
       {
+        name: 'EXIF Stripper',
+        description:
+          'View and remove hidden metadata — EXIF, GPS location, XMP — from photos. Lossless for JPEG and PNG.',
+        href: '/exif-stripper',
+      },
+      {
         name: 'Image Compressor',
         description:
           'Compress PNG, JPEG, WebP, and AVIF images — quality presets or target size in KB.',
@@ -68,6 +74,12 @@ export const TOOL_CATEGORIES: ToolCategory[] = [
         href: '/image-resizer',
       },
       {
+        name: 'Image to Data URI',
+        description:
+          'Convert an image to a base64 data URI — CSS and HTML snippets, URL-encoded SVG output, size stats.',
+        href: '/image-to-data-uri',
+      },
+      {
         name: 'Image to Favicon',
         description:
           'Generate a full favicon set from an image — PNG sizes, .ico, maskable icons, and a web manifest.',
@@ -85,16 +97,10 @@ export const TOOL_CATEGORIES: ToolCategory[] = [
     name: 'Dev Misc',
     tools: [
       {
-        name: 'Unix Timestamp Converter',
+        name: 'Code Minifier & Formatter',
         description:
-          'Convert Unix timestamps to human-readable dates and back — seconds or milliseconds, live clock, relative time.',
-        href: '/timestamp-converter',
-      },
-      {
-        name: 'Cron Parser',
-        description:
-          'Explain a cron expression in plain English, validate each field, and preview the next run times.',
-        href: '/cron-parser',
+          'Minify or beautify HTML, CSS, and JavaScript right in the browser — with size stats, copy, and download.',
+        href: '/code-minifier',
       },
       {
         name: 'Color Converter',
@@ -103,16 +109,40 @@ export const TOOL_CATEGORIES: ToolCategory[] = [
         href: '/color-converter',
       },
       {
+        name: 'Cron Generator',
+        description:
+          'Build a cron expression from a form — frequency, time, weekdays, month days, or intervals — with a live preview.',
+        href: '/cron-generator',
+      },
+      {
+        name: 'Cron Parser',
+        description:
+          'Explain a cron expression in plain English, validate each field, and preview the next run times.',
+        href: '/cron-parser',
+      },
+      {
         name: 'CSS Gradient Generator',
         description:
           'Design linear and radial CSS gradients — angle, shape, color stops, live preview, ready-to-paste CSS.',
         href: '/gradient-generator',
       },
       {
-        name: 'Code Minifier & Formatter',
+        name: 'JWT Decoder',
         description:
-          'Minify or beautify HTML, CSS, and JavaScript right in the browser — with size stats, copy, and download.',
-        href: '/code-minifier',
+          'Inspect a JSON Web Token — decode header and payload, read claims, check expiry, and verify HMAC signatures locally.',
+        href: '/jwt-decoder',
+      },
+      {
+        name: 'Regex Tester',
+        description:
+          'Test a regular expression against text — live match highlighting, capture groups, replace preview, and a cheatsheet.',
+        href: '/regex-tester',
+      },
+      {
+        name: 'Unix Timestamp Converter',
+        description:
+          'Convert Unix timestamps to human-readable dates and back — seconds or milliseconds, live clock, relative time.',
+        href: '/timestamp-converter',
       },
     ],
   },

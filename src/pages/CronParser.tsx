@@ -2,7 +2,7 @@ import { createMemo, createSignal, For, onSettled, Show } from 'solid-js';
 import Section from '../components/Section';
 import { btnClass } from '../lib/ui';
 import { createCopier } from '../lib/clipboard';
-import { parseCron } from '../lib/cron';
+import { formatRunDate, parseCron, relativeFromNow } from '../lib/cron';
 
 const SAMPLE = '*/15 9-17 * * 1-5';
 
@@ -16,31 +16,6 @@ const PRESETS = [
   '0 0 1 1 *',
   '0 */6 * * *',
 ];
-
-const pad = (n: number): string => String(n).padStart(2, '0');
-
-const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-const MONTHS = [
-  'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
-];
-
-function formatRun(d: Date): string {
-  return `${WEEKDAYS[d.getDay()]} ${d.getDate()} ${MONTHS[d.getMonth()]} ${d.getFullYear()}, ${pad(
-    d.getHours(),
-  )}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
-}
-
-function relativeFromNow(d: Date): string {
-  const diff = d.getTime() - Date.now();
-  const mins = Math.round(diff / 60000);
-  if (mins < 1) return 'in less than a minute';
-  if (mins < 60) return `in ${mins} minute${mins > 1 ? 's' : ''}`;
-  const hours = Math.round(mins / 60);
-  if (hours < 24) return `in ${hours} hour${hours > 1 ? 's' : ''}`;
-  const days = Math.round(hours / 24);
-  return `in ${days} day${days > 1 ? 's' : ''}`;
-}
 
 export default function CronParser() {
   const [expr, setExpr] = createSignal(SAMPLE);
@@ -162,7 +137,7 @@ export default function CronParser() {
                 {(run) => (
                   <li class="flex items-center justify-between gap-3 py-1.5 border-b border-stone-950/10 dark:border-stone-50/10 last:border-0">
                     <span class="font-mono text-sm text-stone-900 dark:text-stone-100">
-                      {formatRun(run)}
+                      {formatRunDate(run)}
                     </span>
                     <span class="text-xs text-stone-500 dark:text-stone-400 shrink-0">
                       {relativeFromNow(run)}

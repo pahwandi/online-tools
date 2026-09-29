@@ -305,6 +305,31 @@ export function nextRuns(
   return results;
 }
 
+const WEEKDAY_SHORT = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const MONTH_SHORT = [
+  'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+];
+
+/** Format a fire time for display, e.g. "Mon 5 Jan 2026, 09:00:00". */
+export function formatRunDate(d: Date): string {
+  return `${WEEKDAY_SHORT[d.getDay()]} ${d.getDate()} ${MONTH_SHORT[d.getMonth()]} ${d.getFullYear()}, ${pad(
+    d.getHours(),
+  )}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+}
+
+/** Coarse "in X minutes/hours/days" relative label for a future date. */
+export function relativeFromNow(d: Date, now = Date.now()): string {
+  const diff = d.getTime() - now;
+  const mins = Math.round(diff / 60000);
+  if (mins < 1) return 'in less than a minute';
+  if (mins < 60) return `in ${mins} minute${mins > 1 ? 's' : ''}`;
+  const hours = Math.round(mins / 60);
+  if (hours < 24) return `in ${hours} hour${hours > 1 ? 's' : ''}`;
+  const days = Math.round(hours / 24);
+  return `in ${days} day${days > 1 ? 's' : ''}`;
+}
+
 /** Parse a 5-field (minute-first) or 6-field (second-first) cron expression. */
 export function parseCron(expr: string, from = new Date()): CronInfo {
   const trimmed = expr.trim();
