@@ -38,6 +38,24 @@ export const TOOL_CATEGORIES: ToolCategory[] = [
           'Convert an array of JSON objects to CSV with nested flattening and delimiter selection.',
         href: '/json-to-csv',
       },
+      {
+        name: 'CSV to JSON',
+        description:
+          'Convert CSV to a JSON array — quoted fields, delimiter choice, header row, and type inference.',
+        href: '/csv-to-json',
+      },
+      {
+        name: 'JSON to YAML',
+        description:
+          'Convert JSON to YAML and back — block mappings, sequences, and comments, all locally.',
+        href: '/json-to-yaml',
+      },
+      {
+        name: 'JSON to TypeScript',
+        description:
+          'Generate TypeScript interfaces and a Zod schema from JSON — array shapes merged, optional keys detected.',
+        href: '/json-to-typescript',
+      },
     ],
   },
   {

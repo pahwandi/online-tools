@@ -3,6 +3,9 @@ import Home from './pages/Home';
 import JsObjectToJson from './pages/JsObjectToJson';
 import JsonFormatter from './pages/JsonFormatter';
 import JsonToCsv from './pages/JsonToCsv';
+import CsvToJson from './pages/CsvToJson';
+import JsonToYaml from './pages/JsonToYaml';
+import JsonToTypescript from './pages/JsonToTypescript';
 import ImageCompressor from './pages/ImageCompressor';
 import ImageConverter from './pages/ImageConverter';
 import ImageCropper from './pages/ImageCropper';
@@ -27,6 +30,9 @@ export const Router = createRouter({
     { path: '/js-object-to-json', component: JsObjectToJson },
     { path: '/json-formatter', component: JsonFormatter },
     { path: '/json-to-csv', component: JsonToCsv },
+    { path: '/csv-to-json', component: CsvToJson },
+    { path: '/json-to-yaml', component: JsonToYaml },
+    { path: '/json-to-typescript', component: JsonToTypescript },
     { path: '/image-compressor', component: ImageCompressor },
     { path: '/image-converter', component: ImageConverter },
     { path: '/image-cropper', component: ImageCropper },

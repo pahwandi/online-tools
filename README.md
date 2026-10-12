@@ -9,6 +9,9 @@ Free, privacy-friendly online tools. Every tool runs entirely in your browser �
 - [JS Object to JSON](/js-object-to-json) — convert a JS object literal to valid, formatted JSON.
 - [JSON Formatter](/json-formatter) — prettify, minify, and validate JSON with syntax highlighting.
 - [JSON to CSV](/json-to-csv) — convert an array of JSON objects to CSV with nested flattening.
+- [CSV to JSON](/csv-to-json) — convert CSV to a JSON array with delimiter choice and type inference.
+- [JSON to YAML](/json-to-yaml) — convert JSON to YAML and back, all locally.
+- [JSON to TypeScript](/json-to-typescript) — generate TypeScript interfaces and a Zod schema from JSON.
 
 **Image**
 
