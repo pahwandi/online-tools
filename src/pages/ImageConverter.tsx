@@ -146,30 +146,13 @@ export default function ImageConverter() {
             </button>
           </div>
 
-          <div class="grid grid-cols-2 max-[60rem]:grid-cols-1 gap-8">
-            <div class="flex flex-col gap-2">
-              <span class="text-sm text-stone-500 dark:text-stone-400">
-                Before
-              </span>
-              <img
-                src={source().img.src}
-                alt="Original"
-                class="max-w-full max-h-96 rounded-lg border border-stone-950/20 dark:border-stone-50/16 object-contain bg-stone-50 dark:bg-stone-950"
-              />
-            </div>
-            <div class="flex flex-col gap-2">
-              <span class="text-sm text-stone-500 dark:text-stone-400">
-                After
-              </span>
-              {result() && (
-                <img
-                  src={result()!.url}
-                  alt="Converted"
-                  class="max-w-full max-h-96 rounded-lg border border-stone-950/20 dark:border-stone-50/16 object-contain bg-stone-50 dark:bg-stone-950"
-                />
-              )}
-            </div>
-          </div>
+          {result() && (
+            <img
+              src={result()!.url}
+              alt="Converted"
+              class="max-w-full max-h-96 rounded-lg border border-stone-950/20 dark:border-stone-50/16 object-contain bg-stone-50 dark:bg-stone-950"
+            />
+          )}
         </>
       )}
 
