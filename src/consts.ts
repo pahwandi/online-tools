@@ -157,6 +157,12 @@ export const TOOL_CATEGORIES: ToolCategory[] = [
         href: '/jwt-decoder',
       },
       {
+        name: 'PDF Compressor',
+        description:
+          'Shrink PDF files in your browser — pagination, resolution, and JPEG quality controls, page by page.',
+        href: '/pdf-compressor',
+      },
+      {
         name: 'Regex Tester',
         description:
           'Test a regular expression against text — live match highlighting, capture groups, replace preview, and a cheatsheet.',

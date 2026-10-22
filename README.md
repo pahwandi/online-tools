@@ -33,6 +33,7 @@ Free, privacy-friendly online tools. Every tool runs entirely in your browser �
 - [Cron Parser](/cron-parser) — explain a cron expression, validate fields, preview next runs.
 - [CSS Gradient Generator](/gradient-generator)
 - [JWT Decoder](/jwt-decoder) — decode header/payload, read claims, verify HMAC signatures locally.
+- [PDF Compressor](/pdf-compressor) — shrink PDFs locally with resolution and JPEG quality controls.
 - [Regex Tester](/regex-tester) — live match highlighting, capture groups, replace preview.
 - [Unix Timestamp Converter](/timestamp-converter)
 

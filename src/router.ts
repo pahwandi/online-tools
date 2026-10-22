@@ -14,6 +14,7 @@ import ImageToFavicon from './pages/ImageToFavicon';
 import ImageWatermark from './pages/ImageWatermark';
 import ImageToDataUri from './pages/ImageToDataUri';
 import ImageToPdf from './pages/ImageToPdf';
+import PdfCompressor from './pages/PdfCompressor';
 import ExifStripper from './pages/ExifStripper';
 import TimestampConverter from './pages/TimestampConverter';
 import CronParser from './pages/CronParser';
@@ -42,6 +43,7 @@ export const Router = createRouter({
     { path: '/image-watermark', component: ImageWatermark },
     { path: '/image-to-data-uri', component: ImageToDataUri },
     { path: '/image-to-pdf', component: ImageToPdf },
+    { path: '/pdf-compressor', component: PdfCompressor },
     { path: '/exif-stripper', component: ExifStripper },
     { path: '/timestamp-converter', component: TimestampConverter },
     { path: '/cron-parser', component: CronParser },
