@@ -28,6 +28,7 @@
     "@solidjs/router": "^2.0.0-next.19",
     "@solidjs/web": "^2.0.0-rc.6",
     "json5": "^2.2.3",
+    "pdf-lib": "^1.17.1",
     "solid-js": "^2.0.0-rc.6"
   }
 }

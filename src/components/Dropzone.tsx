@@ -3,7 +3,11 @@ import type { JSX } from '@solidjs/web';
 
 interface Props {
   accept: string;
-  onFile: (file: File) => void;
+  /** Required unless `multiple` and `onFiles` are set. */
+  onFile?: (file: File) => void;
+  multiple?: boolean;
+  /** Called instead of `onFile` when `multiple` is set. */
+  onFiles?: (files: File[]) => void;
   children: JSX.Element;
 }
 
@@ -11,8 +15,13 @@ export default function Dropzone(props: Props) {
   const [dragging, setDragging] = createSignal(false);
   let input: HTMLInputElement | undefined;
 
-  const pick = (file: File | undefined) => {
-    if (file) props.onFile(file);
+  const pick = (files: FileList | undefined | null) => {
+    if (!files || files.length === 0) return;
+    if (props.multiple && props.onFiles) {
+      props.onFiles(Array.from(files));
+    } else if (props.onFile) {
+      props.onFile(files[0]);
+    }
   };
 
   return (
@@ -32,7 +41,7 @@ export default function Dropzone(props: Props) {
       onDrop={(e) => {
         e.preventDefault();
         setDragging(false);
-        pick(e.dataTransfer?.files?.[0]);
+        pick(e.dataTransfer?.files);
       }}
       role="button"
       tabIndex={0}
@@ -49,9 +58,10 @@ export default function Dropzone(props: Props) {
         }}
         type="file"
         accept={props.accept}
+        multiple={props.multiple}
         class="hidden"
         onChange={(e) => {
-          pick(e.currentTarget.files?.[0]);
+          pick(e.currentTarget.files);
           e.currentTarget.value = '';
         }}
       />

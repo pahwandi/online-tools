@@ -21,6 +21,12 @@ export const TOOL_CATEGORIES: ToolCategory[] = [
     name: 'JSON',
     tools: [
       {
+        name: 'CSV to JSON',
+        description:
+          'Convert CSV to a JSON array — quoted fields, delimiter choice, header row, and type inference.',
+        href: '/csv-to-json',
+      },
+      {
         name: 'JS Object to JSON',
         description:
           'Convert a JavaScript object literal to valid, formatted JSON. Handles unquoted keys, single quotes, and trailing commas.',
@@ -39,22 +45,16 @@ export const TOOL_CATEGORIES: ToolCategory[] = [
         href: '/json-to-csv',
       },
       {
-        name: 'CSV to JSON',
+        name: 'JSON to TypeScript',
         description:
-          'Convert CSV to a JSON array — quoted fields, delimiter choice, header row, and type inference.',
-        href: '/csv-to-json',
+          'Generate TypeScript interfaces and a Zod schema from JSON — array shapes merged, optional keys detected.',
+        href: '/json-to-typescript',
       },
       {
         name: 'JSON to YAML',
         description:
           'Convert JSON to YAML and back — block mappings, sequences, and comments, all locally.',
         href: '/json-to-yaml',
-      },
-      {
-        name: 'JSON to TypeScript',
-        description:
-          'Generate TypeScript interfaces and a Zod schema from JSON — array shapes merged, optional keys detected.',
-        href: '/json-to-typescript',
       },
     ],
   },
@@ -102,6 +102,12 @@ export const TOOL_CATEGORIES: ToolCategory[] = [
         description:
           'Generate a full favicon set from an image — PNG sizes, .ico, maskable icons, and a web manifest.',
         href: '/image-to-favicon',
+      },
+      {
+        name: 'Image to PDF',
+        description:
+          'Merge images into a single PDF — each image becomes one page, in your order, all locally.',
+        href: '/image-to-pdf',
       },
       {
         name: 'Image Watermark',

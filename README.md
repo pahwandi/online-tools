@@ -22,6 +22,7 @@ Free, privacy-friendly online tools. Every tool runs entirely in your browser �
 - [Image Resizer](/image-resizer)
 - [Image to Data URI](/image-to-data-uri) — base64 data URI with CSS/HTML snippets and URL-encoded SVG output.
 - [Image to Favicon](/image-to-favicon)
+- [Image to PDF](/image-to-pdf) — merge images into a single PDF, each image on its own page.
 - [Image Watermark](/image-watermark)
 
 **Dev Misc**
