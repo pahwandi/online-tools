@@ -171,7 +171,7 @@ export default function ImageCompressor() {
             <img
               src={result()!.url}
               alt="Compressed preview"
-              class="max-w-full max-h-96 rounded-lg border border-stone-950/20 dark:border-stone-50/16"
+              class="max-w-[500px] max-h-[500px] rounded-lg border border-stone-950/20 dark:border-stone-50/16"
             />
           )}
         </>
